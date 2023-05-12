@@ -1,14 +1,17 @@
 import React from 'react'
 import { StyleSheet, Text, View } from 'react-native'
-import { Card } from '@rneui/base'
+import { Button, Card } from '@rneui/base'
 import { Input } from '@rneui/themed'
 import { useState } from 'react'
 
 
 const PessoaAddComponent = ({navigation}) => {
-  const [name, setName] = useState()
-  const [idade, setIdade] = useState()
-  const [hobby, setHobby] = useState()  
+  const [name, setName] = useState('')
+  const [idade, setIdade] = useState('')
+  const [hobby, setHobby] = useState('')  
+  const addPessoa = () => {
+    console.log(name, idade, hobby)
+  }
 
   return (
     <>
@@ -21,21 +24,25 @@ const PessoaAddComponent = ({navigation}) => {
                 placeholder='Digite seu nome'
                 leftIcon={{type: 'font-awesome', name: 'user'}}
                 styles={styles.textInput}
-                onChange={(nomeDigitado) => setNome(nomeDigitado)}
+                onChangeText={(nomeDigitado) => setName(nomeDigitado)}
             />
             <Input
                 placeholder='Digite a idade'
                 leftIcon={{type: 'font-awesome', name: 'info'}}
                 styles={styles.textInput}
-                onChange={(idadeDigitada ) => setIdade(idadeDigitada)}
+                onChangeText={(idadeDigitada ) => setIdade(idadeDigitada)}
             />
             <Input
                 placeholder='Digite o hobby'
                 leftIcon={{type: 'font-awesome', name: 'heart'}}
                 styles={styles.textInput}
-                onChange={hobbyDigitado => setHobby(hobbyDigitado)}
+                onChangeText={hobbyDigitado => setHobby(hobbyDigitado)}
             />           
 
+            <Button 
+                title='OK'
+                onPress={addPessoa}
+            />
         </Card>
     </>
   )
