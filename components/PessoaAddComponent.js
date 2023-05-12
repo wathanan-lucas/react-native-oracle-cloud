@@ -1,16 +1,26 @@
 import React from 'react'
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, ToastAndroid } from 'react-native'
 import { Button, Card } from '@rneui/base'
 import { Input } from '@rneui/themed'
 import { useState } from 'react'
+
+import * as pessoaService from '../service/pessoaService'
 
 
 const PessoaAddComponent = ({navigation}) => {
   const [name, setName] = useState('')
   const [idade, setIdade] = useState('')
   const [hobby, setHobby] = useState('')  
-  const addPessoa = () => {
-    console.log(name, idade, hobby)
+  const addPessoa = async () => {
+    try{
+        const res = await pessoaService.cadastrarPessoa({nome: name, idade: idade, hobby: hobby})
+        console.log(res)
+        ToastAndroid.show("Pessoa cadastrada com sucesso", ToastAndroid.LONG)
+    }catch(e) {
+        console.log('erro', e)
+        ToastAndroid.show("Falha. Tente novamente mais tarde", ToastAndroid.LONG)
+
+    }
   }
 
   return (
