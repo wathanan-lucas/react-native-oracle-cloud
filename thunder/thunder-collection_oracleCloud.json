@@ -1,0 +1,42 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "oracleCloud",
+    "dateExported": "2023-05-12T22:50:13.284Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "311a4533-3810-4149-b6b5-546f048c5d1b",
+            "colId": "4cac9cd1-e067-4364-aca1-9f4d65ad01e4",
+            "containerId": "",
+            "name": "getPessoas",
+            "url": "https://g7b6e620787d151-s2204lud7dpmx4b7.adb.us-ashburn-1.oraclecloudapps.com/ords/admin/tb_pessoa/",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2023-05-12T22:41:54.912Z",
+            "modified": "2023-05-12T22:42:22.419Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "3f79f0f4-d0da-4345-aa9b-c449e0060989",
+            "colId": "4cac9cd1-e067-4364-aca1-9f4d65ad01e4",
+            "containerId": "",
+            "name": "postPessoa",
+            "url": "https://g7b6e620787d151-s2204lud7dpmx4b7.adb.us-ashburn-1.oraclecloudapps.com/ords/admin/tb_pessoa/",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2023-05-12T22:43:24.807Z",
+            "modified": "2023-05-12T22:45:24.771Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"nome\": \"{{#name}}\",\n  \"idade\": \"30\",\n  \"hobby\": \"Ver filme\"\n}",
+                "form": []
+            },
+            "tests": []
+        }
+    ]
+}
